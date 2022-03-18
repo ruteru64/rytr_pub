@@ -1,0 +1,13 @@
+C:\Users\imaqu\Desktop\pg\RUST\rayt\target\debug\deps\gif-0261089f7e210176.rmeta: C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\lib.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\traits.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\common.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\mod.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\decoder.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\encoder.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\../README.md
+
+C:\Users\imaqu\Desktop\pg\RUST\rayt\target\debug\deps\libgif-0261089f7e210176.rlib: C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\lib.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\traits.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\common.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\mod.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\decoder.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\encoder.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\../README.md
+
+C:\Users\imaqu\Desktop\pg\RUST\rayt\target\debug\deps\gif-0261089f7e210176.d: C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\lib.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\traits.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\common.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\mod.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\decoder.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\encoder.rs C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\../README.md
+
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\lib.rs:
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\traits.rs:
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\common.rs:
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\mod.rs:
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\reader\decoder.rs:
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\encoder.rs:
+C:\Users\imaqu\.cargo\registry\src\github.com-1ecc6299db9ec823\gif-0.11.3\src\../README.md:
