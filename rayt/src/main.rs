@@ -735,12 +735,12 @@ impl ShapeBuilder {
 
 // Scene
 
-struct CornelBoxScene {
+struct MakeScene {
     world: ShapeList,
     light: Arc<dyn Shape>,
 }
 
-impl CornelBoxScene {
+impl MakeScene {
     fn new(i:f64) -> Self {
         let mut world = ShapeList::new();
 
@@ -846,7 +846,7 @@ impl CornelBoxScene {
     }
 }
 
-impl SceneWithDepth for CornelBoxScene {
+impl SceneWithDepth for MakeScene {
     fn camera(&self) -> Camera {
         Camera::from_lookat(
             Vec3::new(278.0, 278.0, -800.0),
@@ -904,7 +904,7 @@ fn main() {
     let filename:&str = "sean";
     for i in 0..1{
         let stri: &str = &(i+44).to_string();
-        render_aa_with_depth(CornelBoxScene::new(i as f64),&(format!("{}{}{}",filename,stri,".png")));
+        render_aa_with_depth(MakeScene::new(i as f64),&(format!("{}{}{}",filename,stri,".png")));
         print!("{}",i);
     }
 }
