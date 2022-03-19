@@ -5,6 +5,8 @@ mod quat;
 mod window;
 mod render;
 mod onb;
+mod lexical;
+
 
 pub use self::float3::{Float3,Color,Vec3,Point3};
 pub use self::camera::Camera;
@@ -13,6 +15,7 @@ pub use self::ray::Ray;
 pub use self::render::*;
 pub use self::window::*;
 pub use self::onb::ONB;
+pub use self::lexical::*;
 
 pub use std::sync::Arc;
 pub use std::f64::consts::PI;

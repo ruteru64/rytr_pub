@@ -39,14 +39,11 @@ pub trait SceneWithDepth {
 }
 
 pub fn render(screne:impl Scene + Sync){
-    backup(&("as"));
+    backup("back");
 
     let camera = screne.camera();
     let mut img = RgbImage::new(screne.width(),screne.height());
-    img.enumerate_pixels_mut()
-        .collect::<Vec<(u32,u32,&mut Rgb<u8>)>>()
-        .par_iter_mut()
-        .for_each(|(x,y,pixel)|{
+    img.enumerate_pixels_mut().collect::<Vec<(u32,u32,&mut Rgb<u8>)>>().par_iter_mut().for_each(|(x,y,pixel)|{
             let u = *x as f64 / (IMAGE_WIDTH - 1) as f64;
             let v = (IMAGE_HEIGHT - *y - 1) as f64 / (IMAGE_HEIGHT - 1) as f64;
             let ray = camera.ray(u,v);
@@ -65,10 +62,7 @@ pub fn render_aa(screne:impl Scene + Sync){
 
     let camera = screne.camera();
     let mut img = RgbImage::new(screne.width(),screne.height());
-    img.enumerate_pixels_mut()
-        .collect::<Vec<(u32,u32,&mut Rgb<u8>)>>()
-        .par_iter_mut()
-        .for_each(|(x,y,pixel)|{
+    img.enumerate_pixels_mut().collect::<Vec<(u32,u32,&mut Rgb<u8>)>>().par_iter_mut().for_each(|(x,y,pixel)|{
             let mut pixel_color = (0..screne.spp()).into_iter().fold(Color::zero(),|acc, _|{
                 let [rx,ry,_] = Float3::random().to_array();
                 let u = (*x as f64 + rx) / (screne.width() - 1) as f64;
@@ -86,7 +80,7 @@ pub fn render_aa(screne:impl Scene + Sync){
     draw_in_window(BACKUP_FILENAME,img).unwrap();
 }
 
-pub fn render_aa_with_depth(scene: impl SceneWithDepth + Sync,filename:&str) {
+pub fn render_aa_with_depth_name(scene: impl SceneWithDepth + Sync,filename:&str) {
     backup(filename);
 
     let camera = scene.camera();
@@ -103,15 +97,37 @@ pub fn render_aa_with_depth(scene: impl SceneWithDepth + Sync,filename:&str) {
                 acc + scene.trace(ray, MAX_RAY_BOUNCE_DEPTH)
             });
             pixel_color /= scene.spp() as f64;
-            // let rgb = pixel_color.to_rgb();
             let rgb = pixel_color.gamma(GAMMA_FACTOR).to_rgb();
-            // let rgb = pixel_color.gamma(GAMMA_FACTOR).saturate().to_rgb();
-            // let rgb = nan_check(pixel_color).to_rgb();
             pixel[0] = rgb[0];
             pixel[1] = rgb[1];
             pixel[2] = rgb[2];
         });
     img.save(filename).unwrap();
     print!("{}",filename);
-    //draw_in_window(BACKUP_FILENAME, img).unwrap();
+}
+
+pub fn render_aa_with_depth(scene: impl SceneWithDepth + Sync) {
+    backup("backup");
+
+    let camera = scene.camera();
+    let mut img = RgbImage::new(scene.width(), scene.height());
+    img.enumerate_pixels_mut()
+        .collect::<Vec<(u32, u32, &mut Rgb<u8>)>>()
+        .par_iter_mut()
+        .for_each(|(x, y, pixel)| {
+            let mut pixel_color = (0..scene.spp()).into_iter().fold(Color::zero(), |acc, _| {
+                let [rx, ry, _] = Float3::random().to_array();
+                let u = (*x as f64 + rx) / (scene.width() - 1) as f64;
+                let v = ((scene.height() - *y - 1) as f64 + ry) / (scene.height() - 1) as f64;
+                let ray = camera.ray(u, v);
+                acc + scene.trace(ray, MAX_RAY_BOUNCE_DEPTH)
+            });
+            pixel_color /= scene.spp() as f64;
+            let rgb = pixel_color.gamma(GAMMA_FACTOR).to_rgb();
+            pixel[0] = rgb[0];
+            pixel[1] = rgb[1];
+            pixel[2] = rgb[2];
+        });
+    img.save(OUTPUT_FILENAME).unwrap();
+    draw_in_window(BACKUP_FILENAME, img).unwrap();
 }
